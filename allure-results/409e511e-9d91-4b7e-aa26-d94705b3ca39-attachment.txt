@@ -1,0 +1,3 @@
+2026-09-17T20:42:33.507Z [info] Navigating to: /playwright/ttacart/index.html
+2026-09-17T20:42:35.325Z [info] Page loaded: /playwright/ttacart/index.html
+2026-09-17T20:42:35.326Z [info] Logging in as: standard_user

@@ -22,7 +22,7 @@ function resolveBaseUrl(): string {
 
     case "qa":
     default:
-      return process.env.QA_BASE_URL || "https://app.thetestingacademy.com/playwright/ttacart/";
+      return process.env.QA_BASE_URL || "https://app.thetestingacademy.com";
 
   }
 }
@@ -44,7 +44,7 @@ export default defineConfig({
     ['./src/utils/CustomReporter.ts'],
   ],
   use: {
-    baseURL: resolveBaseUrl(),
+    baseURL: "https://app.thetestingacademy.com",
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
