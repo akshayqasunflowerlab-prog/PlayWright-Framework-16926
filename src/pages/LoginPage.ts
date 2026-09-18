@@ -5,20 +5,21 @@ import { logger } from '../utils/Logger';
 export class LoginPage extends BasePage {
     private static readonly PATH = '/playwright/ttacart/index.html';
 
-    private readonly usernameInput: Locator;
-    private readonly passwordInput: Locator;
-    private readonly loginButton: Locator;
-    private readonly errorBox: Locator;
+    private readonly textboxUsername: Locator;
+    private readonly textboxPassword: Locator;
+    private readonly buttonLogin: Locator;
+    private readonly alert: Locator;
     private readonly loginCredentialsHint: Locator;
 
     constructor(page: Page) {
         super(page, 'LoginPage');
 
-        this.usernameInput = page.locator('[data-test="username"]');
-        this.passwordInput = page.locator('[data-test="password"]');
-        this.loginButton = page.locator('[data-test="login-button"]');
-        this.errorBox = page.locator('[data-test="error"]');
+        this.textboxUsername = page.getByRole("textbox", { name: "Username" });
+        this.textboxPassword = page.getByRole("textbox", { name: "Password" });
+        this.buttonLogin = page.getByRole("button", { name: "Login" });
+        this.alert = page.getByRole("alert");
         this.loginCredentialsHint = page.locator('[data-test="login-credentials"]');
+
     }
 
     async open(): Promise<void> {
@@ -28,13 +29,13 @@ export class LoginPage extends BasePage {
     async loginAs(username: string, password: string): Promise<void> {
         logger.info(`Logging in as: ${username}`);
 
-        await this.elementLocator.fill(this.usernameInput, username);
-        await this.elementLocator.fill(this.passwordInput, password);
-        await this.elementLocator.click(this.loginButton);
+        await this.elementLocator.fill(this.textboxUsername, username);
+        await this.elementLocator.fill(this.textboxPassword, password);
+        await this.elementLocator.click(this.buttonLogin);
     }
 
     async getErrorMessage(): Promise<string> {
-        return this.elementLocator.getText(this.errorBox);
+        return this.elementLocator.getText(this.alert);
     }
 
     async getLoginCredentialsHint(): Promise<string> {
