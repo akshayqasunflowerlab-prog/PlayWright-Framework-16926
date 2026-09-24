@@ -1,0 +1,3 @@
+2026-09-18T11:32:30.652Z [info] Navigating to: /playwright/ttacart/index.html
+2026-09-18T11:32:33.834Z [info] Page loaded: /playwright/ttacart/index.html
+2026-09-18T11:32:33.839Z [info] Logging in as: locked_out_user

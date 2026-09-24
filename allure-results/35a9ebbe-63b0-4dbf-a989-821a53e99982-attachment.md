@@ -1,0 +1,260 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Cart.spec.ts >> TTACart - Cart Page >> CART-007 - Verify Checkout opens customer details
+- Location: src\tests\Cart.spec.ts:26:9
+
+# Error details
+
+```
+Error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 5
+Received:   0
+
+Call Log:
+- Timeout 5000ms exceeded while waiting on the predicate
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=f1e1]:
+  - complementary [ref=f1e2]:
+    - button "Close menu" [ref=f1e3] [cursor=pointer]: ×
+    - link "All Items" [ref=f1e4] [cursor=pointer]:
+      - /url: ./inventory.html
+    - link "About" [ref=f1e5] [cursor=pointer]:
+      - /url: https://app.thetestingacademy.com/
+    - link "Logout" [ref=f1e6] [cursor=pointer]:
+      - /url: "#"
+    - link "Reset App State" [ref=f1e7] [cursor=pointer]:
+      - /url: "#"
+  - banner [ref=f1e8]:
+    - button "Open menu" [ref=f1e9] [cursor=pointer]
+    - generic [ref=f1e12]: TTACart
+    - link "Shopping cart" [ref=f1e13] [cursor=pointer]:
+      - /url: ./cart.html
+  - generic [ref=f1e18]:
+    - generic [ref=f1e19]: Products
+    - combobox "Sort products" [ref=f1e23] [cursor=pointer]:
+      - option "Name (A to Z)" [selected]
+      - option "Name (Z to A)"
+      - option "Price (low to high)"
+      - option "Price (high to low)"
+  - main [ref=f1e24]:
+    - generic [ref=f1e26]:
+      - article [ref=f1e27]:
+        - link [ref=f1e28] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=test-allthethings-tshirt-red
+          - img [aria-hidden] [ref=f1e29]:
+            - generic [ref=f1e31]: test.
+            - generic [ref=f1e32]: all()
+        - generic [ref=f1e33]:
+          - link "Test.allTheThings() T-Shirt (Red)" [ref=f1e35] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=test-allthethings-tshirt-red
+          - generic [ref=f1e36]: This classic TTA t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+          - generic [ref=f1e37]:
+            - generic [ref=f1e38]: $15.99
+            - button "Add to cart" [ref=f1e39] [cursor=pointer]
+      - article [ref=f1e40]:
+        - link [ref=f1e41] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-bike-light
+        - generic [ref=f1e48]:
+          - link "TTA Bike Light" [ref=f1e50] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-bike-light
+          - generic [ref=f1e51]: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+          - generic [ref=f1e52]:
+            - generic [ref=f1e53]: $9.99
+            - button "Add to cart" [ref=f1e54] [cursor=pointer]
+      - article [ref=f1e55]:
+        - link [ref=f1e56] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-bolt-tshirt
+        - generic [ref=f1e60]:
+          - link "TTA Bolt T-Shirt" [ref=f1e62] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-bolt-tshirt
+          - generic [ref=f1e63]: Get your testing superhero on with the TTA bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+          - generic [ref=f1e64]:
+            - generic [ref=f1e65]: $15.99
+            - button "Add to cart" [ref=f1e66] [cursor=pointer]
+      - article [ref=f1e67]:
+        - link [ref=f1e68] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-fleece-jacket
+        - generic [ref=f1e75]:
+          - link "TTA Fleece Jacket" [ref=f1e77] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-fleece-jacket
+          - generic [ref=f1e78]: It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+          - generic [ref=f1e79]:
+            - generic [ref=f1e80]: $49.99
+            - button "Add to cart" [ref=f1e81] [cursor=pointer]
+      - article [ref=f1e82]:
+        - link [ref=f1e83] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-junior-tester-onesie
+          - img [aria-hidden] [ref=f1e84]:
+            - generic [ref=f1e88]: JR
+        - generic [ref=f1e89]:
+          - link "TTA Junior Tester Onesie" [ref=f1e91] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-junior-tester-onesie
+          - generic [ref=f1e92]: Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+          - generic [ref=f1e93]:
+            - generic [ref=f1e94]: $7.99
+            - button "Add to cart" [ref=f1e95] [cursor=pointer]
+      - article [ref=f1e96]:
+        - link [ref=f1e97] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-practice-backpack
+        - generic [ref=f1e103]:
+          - link "TTA Practice Backpack" [ref=f1e105] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-practice-backpack
+          - generic [ref=f1e106]: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: $29.99
+            - button "Add to cart" [ref=f1e109] [cursor=pointer]
+  - contentinfo [ref=f1e111]:
+    - generic [ref=f1e112]:
+      - link "Twitter" [ref=f1e113] [cursor=pointer]:
+        - /url: https://twitter.com/TheTestingAcad
+      - link "Facebook" [ref=f1e116] [cursor=pointer]:
+        - /url: https://facebook.com/
+      - link "LinkedIn" [ref=f1e119] [cursor=pointer]:
+        - /url: https://linkedin.com/
+    - generic [ref=f1e122]:
+      - text: (c) 2026 TTACart - The Testing Academy. All Rights Reserved.
+      - link "Terms of Service" [ref=f1e123] [cursor=pointer]:
+        - /url: https://app.thetestingacademy.com/
+      - text: "|"
+      - link "Privacy Policy" [ref=f1e124] [cursor=pointer]:
+        - /url: https://app.thetestingacademy.com/
+```
+
+# Test source
+
+```ts
+  1   | import { expect, Locator, Page } from '@playwright/test';
+  2   | import { BasePage } from './BasePage';
+  3   | 
+  4   | export type ProductSort = 'az' | 'za' | 'lohi' | 'hilo';
+  5   | 
+  6   | export class ProductListPage extends BasePage {
+  7   |     private static readonly PATH = '/playwright/ttacart/inventory';
+  8   | 
+  9   |     readonly buttonOpenMenu: Locator;
+  10  |     readonly sidemenu: Locator;
+  11  |     readonly linkAllItems: Locator;
+  12  |     readonly linkAbout: Locator;
+  13  |     readonly linkLogout: Locator;
+  14  |     readonly resetSidebarLink: Locator;
+  15  |     readonly buttonCloseMenu: Locator;
+  16  |     readonly titlettacart: Locator;
+  17  |     readonly titleproducts: Locator;
+  18  |     readonly sortDropdown: Locator;
+  19  |     readonly sortoption1: Locator;
+  20  |     readonly sortoption2: Locator;
+  21  |     readonly sortoption3: Locator;
+  22  |     readonly sortoption4: Locator;
+  23  |     readonly inventoryGrid: Locator;
+  24  |     readonly linkTtaBikeLight: Locator;
+  25  |     readonly inventoryItemPrice: Locator;
+  26  |     readonly buttonAddToCart: Locator;
+  27  |     readonly buttonRemoveFromCart: Locator;
+  28  |     readonly buttonCart: Locator;
+  29  | 
+  30  | 
+  31  |     constructor(page: Page) {
+  32  |         super(page, 'ProductListPage');
+  33  | 
+  34  |         this.buttonOpenMenu = page.getByRole("button", { name: "Open menu" });
+  35  |         this.sidemenu = page.locator("#sideMenu");
+  36  |         this.linkAllItems = page.getByRole("link", { name: "All Items" });
+  37  |         this.linkAbout = page.getByRole("link", { name: "About" });
+  38  |         this.linkLogout = page.getByRole("link", { name: "Logout" });
+  39  |         this.resetSidebarLink = page.locator("#reset_sidebar_link");
+  40  |         this.buttonCloseMenu = page.getByRole("button", { name: "Close menu" });
+  41  |         this.titlettacart = page.locator('[data-test="primary-header"]').getByText("TTACart");
+  42  |         this.titleproducts = page.getByText("Products");
+  43  |         this.sortDropdown = page.locator("//div[@class='sort-wrap']//select");
+  44  |         this.sortoption1 = page.locator('option[value="az"]');
+  45  |         this.sortoption2 = page.getByRole("option", { name: "Name (Z to A)" });
+  46  |         this.sortoption3 = page.getByRole("option", { name: "Price (low to high)" });
+  47  |         this.sortoption4 = page.getByRole("option", { name: "Price (high to low)" });
+  48  |         this.inventoryGrid = page.locator("#inventory-grid");
+  49  |         this.linkTtaBikeLight = page.getByRole("link", { name: "TTA Bike Light" });
+  50  |         this.inventoryItemPrice = page.getByTestId("inventory-item-price");
+  51  |         this.buttonAddToCart = page.getByRole("button", { name: "Add to cart" });
+  52  |         this.buttonRemoveFromCart = page.getByRole("button", { name: "Remove" });
+  53  |         this.buttonCart = page.getByRole("link", { name: /cart/i });
+  54  | 
+  55  |     }
+  56  | 
+  57  |     async open(): Promise<void> {
+  58  |         await this.goto(ProductListPage.PATH);
+  59  |         await this.assertLoaded();
+  60  |     }
+  61  | 
+  62  |     async assertLoaded(): Promise<void> {
+  63  |         await expect(this.page).toHaveURL(ProductListPage.PATH);
+  64  |         await expect(this.page).toHaveTitle("TTACart - Products");
+  65  |         await expect(this.buttonOpenMenu).toBeVisible();
+  66  |         await expect(this.titlettacart).toHaveText("TTACart");
+  67  |         await expect(this.titleproducts).toHaveText("Products");
+  68  |         await expect(this.sortDropdown).toHaveValue("az");
+  69  |         await expect(this.inventoryGrid).toBeVisible();
+> 70  |         await expect.poll(async () => this.page.locator('[data-testid="inventory-item"]').count(), { timeout: 5000 }).toBeGreaterThan(5);
+      |                                                                                                                       ^ Error: expect(received).toBeGreaterThan(expected)
+  71  |     }
+  72  | 
+  73  |     async openMenu(): Promise<void> {
+  74  |         await this.buttonOpenMenu.click();
+  75  |         await expect(this.sidemenu).toBeVisible();
+  76  |     }
+  77  | 
+  78  |     async closeMenu(): Promise<void> {
+  79  |         await this.buttonCloseMenu.click();
+  80  |         await expect(this.sidemenu).toBeHidden();
+  81  |     }
+  82  | 
+  83  |     async showAllItems(): Promise<void> {
+  84  |         await this.openMenu();
+  85  |         await this.linkAllItems.click();
+  86  |         await this.assertLoaded();
+  87  |     }
+  88  | 
+  89  |     async sortBy(sort: ProductSort): Promise<void> {
+  90  |         await this.sortDropdown.selectOption(sort);
+  91  |     }
+  92  | 
+  93  |     getProductCard(productName: string): Locator {
+  94  |         return this.page
+  95  |             .locator('[data-testid="inventory-item"]')
+  96  |             .filter({ has: this.page.getByRole('link', { name: productName, exact: true }) });
+  97  |     }
+  98  | 
+  99  |     async openProduct(productName: string): Promise<void> {
+  100 |         await this.getProductCard(productName).getByRole('link', { name: productName, exact: true }).click();
+  101 |     }
+  102 | 
+  103 |     async addProductToCart(productName: string): Promise<void> {
+  104 |         await this.getProductCard(productName).getByRole('button', { name: 'Add to cart' }).click();
+  105 |     }
+  106 | 
+  107 |     async removeProductFromCart(productName: string): Promise<void> {
+  108 |         await this.getProductCard(productName).getByRole('button', { name: 'Remove' }).click();
+  109 |     }
+  110 | 
+  111 |     async isProductInCart(productName: string): Promise<boolean> {
+  112 |         return this.getProductCard(productName).getByRole('button', { name: 'Remove' }).isVisible();
+  113 |     }
+  114 | 
+  115 |     async getProductPrice(productName: string): Promise<string> {
+  116 |         return this.getProductCard(productName).getByTestId('inventory-item-price').innerText();
+  117 |     }
+  118 | 
+  119 |     async getProductNames(): Promise<string[]> {
+  120 |         return this.inventoryGrid.getByRole('link').allTextContents();
+  121 |     }
+  122 | }
+```

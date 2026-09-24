@@ -1,0 +1,3 @@
+2026-09-24T11:57:15.097Z [info] Navigating to: /playwright/ttacart/
+2026-09-24T11:57:16.540Z [info] Page loaded: /playwright/ttacart/
+2026-09-24T11:57:16.598Z [info] Logging in as: standard_user

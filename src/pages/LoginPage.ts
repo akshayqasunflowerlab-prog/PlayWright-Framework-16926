@@ -1,9 +1,9 @@
-import { Locator, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { logger } from '../utils/Logger';
 
 export class LoginPage extends BasePage {
-    private static readonly PATH = '/playwright/ttacart/index.html';
+    private static readonly PATH = '/playwright/ttacart/';
 
     private readonly textboxUsername: Locator;
     private readonly textboxPassword: Locator;
@@ -24,6 +24,12 @@ export class LoginPage extends BasePage {
 
     async open(): Promise<void> {
         await this.goto(LoginPage.PATH);
+        await this.assertLoaded();
+    }
+
+    async assertLoaded(): Promise<void> {
+        await expect(this.page).toHaveURL(LoginPage.PATH);
+        await expect(this.page).toHaveTitle("TTACart - Login");
     }
 
     async loginAs(username: string, password: string): Promise<void> {

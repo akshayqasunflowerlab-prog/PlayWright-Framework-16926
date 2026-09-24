@@ -1,0 +1,323 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ProductList.spec.ts >> TTA Cart - Product List Page Tests >> SORT-002 - Verify product sorting by name in descending alphabetical order (Z to A) | Expected: Selecting Name (Z to A) should reorder products from Z to A.
+- Location: src\tests\ProductList.spec.ts:93:9
+
+# Error details
+
+```
+Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 6
++ Received  + 6
+
+  Array [
++   "",
+    "TTA Practice Backpack",
++   "JR",
+    "TTA Junior Tester Onesie",
++   "",
+    "TTA Fleece Jacket",
++   "",
+    "TTA Bolt T-Shirt",
++   "",
+    "TTA Bike Light",
+-   "Test.allTheThings() T-Shirt (Red)",
+    "test.all()",
+-   "JR",
+-   "",
+-   "",
+-   "",
+-   "",
++   "Test.allTheThings() T-Shirt (Red)",
+  ]
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=f1e1]:
+  - complementary [ref=f1e2]:
+    - button "Close menu" [ref=f1e3] [cursor=pointer]: ×
+    - link "All Items" [ref=f1e4] [cursor=pointer]:
+      - /url: ./inventory.html
+    - link "About" [ref=f1e5] [cursor=pointer]:
+      - /url: https://app.thetestingacademy.com/
+    - link "Logout" [ref=f1e6] [cursor=pointer]:
+      - /url: "#"
+    - link "Reset App State" [ref=f1e7] [cursor=pointer]:
+      - /url: "#"
+  - banner [ref=f1e8]:
+    - button "Open menu" [ref=f1e9] [cursor=pointer]
+    - generic [ref=f1e12]: TTACart
+    - link "Shopping cart" [ref=f1e13] [cursor=pointer]:
+      - /url: ./cart.html
+  - generic [ref=f1e18]:
+    - generic [ref=f1e19]: Products
+    - combobox "Sort products" [ref=f1e23] [cursor=pointer]:
+      - option "Name (A to Z)"
+      - option "Name (Z to A)" [selected]
+      - option "Price (low to high)"
+      - option "Price (high to low)"
+  - main [ref=f1e24]:
+    - generic [ref=f1e26]:
+      - article [ref=f1e27]:
+        - link [ref=f1e28] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-practice-backpack
+        - generic [ref=f1e34]:
+          - link "TTA Practice Backpack" [ref=f1e36] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-practice-backpack
+          - generic [ref=f1e37]: carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+          - generic [ref=f1e38]:
+            - generic [ref=f1e39]: $29.99
+            - button "Add to cart" [ref=f1e40] [cursor=pointer]
+      - article [ref=f1e41]:
+        - link [ref=f1e42] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-junior-tester-onesie
+          - img [aria-hidden] [ref=f1e43]:
+            - generic [ref=f1e47]: JR
+        - generic [ref=f1e48]:
+          - link "TTA Junior Tester Onesie" [ref=f1e50] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-junior-tester-onesie
+          - generic [ref=f1e51]: Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+          - generic [ref=f1e52]:
+            - generic [ref=f1e53]: $7.99
+            - button "Add to cart" [ref=f1e54] [cursor=pointer]
+      - article [ref=f1e55]:
+        - link [ref=f1e56] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-fleece-jacket
+        - generic [ref=f1e63]:
+          - link "TTA Fleece Jacket" [ref=f1e65] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-fleece-jacket
+          - generic [ref=f1e66]: It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+          - generic [ref=f1e67]:
+            - generic [ref=f1e68]: $49.99
+            - button "Add to cart" [ref=f1e69] [cursor=pointer]
+      - article [ref=f1e70]:
+        - link [ref=f1e71] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-bolt-tshirt
+        - generic [ref=f1e75]:
+          - link "TTA Bolt T-Shirt" [ref=f1e77] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-bolt-tshirt
+          - generic [ref=f1e78]: Get your testing superhero on with the TTA bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+          - generic [ref=f1e79]:
+            - generic [ref=f1e80]: $15.99
+            - button "Add to cart" [ref=f1e81] [cursor=pointer]
+      - article [ref=f1e82]:
+        - link [ref=f1e83] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=tta-bike-light
+        - generic [ref=f1e90]:
+          - link "TTA Bike Light" [ref=f1e92] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=tta-bike-light
+          - generic [ref=f1e93]: A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+          - generic [ref=f1e94]:
+            - generic [ref=f1e95]: $9.99
+            - button "Add to cart" [ref=f1e96] [cursor=pointer]
+      - article [ref=f1e97]:
+        - link [ref=f1e98] [cursor=pointer]:
+          - /url: ./inventory-item.html?id=test-allthethings-tshirt-red
+          - img [aria-hidden] [ref=f1e99]:
+            - generic [ref=f1e101]: test.
+            - generic [ref=f1e102]: all()
+        - generic [ref=f1e103]:
+          - link "Test.allTheThings() T-Shirt (Red)" [ref=f1e105] [cursor=pointer]:
+            - /url: ./inventory-item.html?id=test-allthethings-tshirt-red
+          - generic [ref=f1e106]: This classic TTA t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: $15.99
+            - button "Add to cart" [ref=f1e109] [cursor=pointer]
+  - contentinfo [ref=f1e111]:
+    - generic [ref=f1e112]:
+      - link "Twitter" [ref=f1e113] [cursor=pointer]:
+        - /url: https://twitter.com/TheTestingAcad
+      - link "Facebook" [ref=f1e116] [cursor=pointer]:
+        - /url: https://facebook.com/
+      - link "LinkedIn" [ref=f1e119] [cursor=pointer]:
+        - /url: https://linkedin.com/
+    - generic [ref=f1e122]:
+      - text: (c) 2026 TTACart - The Testing Academy. All Rights Reserved.
+      - link "Terms of Service" [ref=f1e123] [cursor=pointer]:
+        - /url: https://app.thetestingacademy.com/
+      - text: "|"
+      - link "Privacy Policy" [ref=f1e124] [cursor=pointer]:
+        - /url: https://app.thetestingacademy.com/
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect } from '@playwright/test';
+  2   | import { LoginPage } from '../pages/LoginPage';
+  3   | import { ProductListPage } from '../pages/ProductListPage';
+  4   | 
+  5   | test.describe('TTA Cart - Product List Page Tests', () => {
+  6   |     let productListPage: ProductListPage;
+  7   | 
+  8   |     test.beforeEach(async ({ page }) => {
+  9   |         const loginPage = new LoginPage(page);
+  10  |         await loginPage.open();
+  11  |         await loginPage.loginAs('standard_user', 'tta_secret');
+  12  | 
+  13  |         productListPage = new ProductListPage(page);
+  14  |         await productListPage.assertLoaded();
+  15  |     });
+  16  | 
+  17  |     test('DATA-001 - Verify product name data integrity | Expected: Each product name should be present, non-empty, and textual.', async ({ page }) => {
+  18  |         const productCards = page.locator('[data-test="inventory-item"]');
+  19  |         await expect(productCards).not.toHaveCount(0);
+  20  | 
+  21  |         const productNames = (await productCards.getByRole('link').allTextContents()).map((name) => name.trim());
+  22  |         const invalidNames = productNames.filter((name) => !name || name === 'null' || name === 'undefined');
+  23  | 
+  24  |         expect(invalidNames).toEqual([]);
+  25  |     });
+  26  | 
+  27  |     test('DATA-002 - Verify product description data integrity | Expected: Each product description should be present, non-empty, and textual.', async ({ page }) => {
+  28  |         const descriptions = await page.locator('[data-test="inventory-item-desc"]').allTextContents();
+  29  |         const invalidDescriptions = descriptions.filter((text) => !text || !text.trim() || text.trim() === 'null' || text.trim() === 'undefined');
+  30  | 
+  31  |         expect(invalidDescriptions).toEqual([]);
+  32  |     });
+  33  | 
+  34  |     test('DATA-003 - Verify product price data integrity | Expected: Each product price should be present and contain a valid numeric value.', async ({ page }) => {
+  35  |         const prices = await page.locator('[data-test="inventory-item-price"]').allTextContents();
+  36  |         const invalidPrices = prices.filter((price) => !price || !price.trim() || Number.isNaN(Number.parseFloat(price.replace(/[^0-9.]/g, ''))));
+  37  | 
+  38  |         expect(invalidPrices).toEqual([]);
+  39  |     });
+  40  | 
+  41  |     test('DATA-004 - Verify product price currency and decimal format | Expected: Product prices should use the application currency format and two decimal places.', async ({ page }) => {
+  42  |         const priceTexts = await page.locator('[data-test="inventory-item-price"]').allTextContents();
+  43  | 
+  44  |         for (const priceText of priceTexts) {
+  45  |             expect(priceText.trim()).toMatch(/^\$\d+\.\d{2}$/);
+  46  |         }
+  47  |     });
+  48  | 
+  49  |     test('DATA-005 - Verify product image loads successfully | Expected: Each product image should load without broken or missing image state.', async ({ page }) => {
+  50  |         const productCard = page.locator('[data-test="inventory-item"]').first();
+  51  |         const image = productCard.locator('img');
+  52  | 
+  53  |         await expect(image).toBeVisible();
+  54  |         await expect.poll(async () => await image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBeTruthy();
+  55  |     });
+  56  | 
+  57  |     test('DATA-006 - Verify product image source attribute | Expected: Each product image should have a valid non-empty src pointing to an image resource.', async ({ page }) => {
+  58  |         const images = page.locator('[data-test="inventory-item"] img');
+  59  |         const count = await images.count();
+  60  | 
+  61  |         expect(count).toBeGreaterThan(0);
+  62  | 
+  63  |         for (let i = 0; i < count; i += 1) {
+  64  |             const src = await images.nth(i).getAttribute('src');
+  65  |             expect(src).toBeTruthy();
+  66  |             expect(src).not.toContain('undefined');
+  67  |             expect(src).not.toContain('null');
+  68  |         }
+  69  |     });
+  70  | 
+  71  |     test('DATA-007 - Verify Add to Cart button availability | Expected: Add to Cart should be present, visible, and enabled for each eligible product.', async ({ page }) => {
+  72  |         const productCards = page.locator('[data-test="inventory-item"]');
+  73  |         const count = await productCards.count();
+  74  | 
+  75  |         expect(count).toBeGreaterThan(0);
+  76  | 
+  77  |         for (let i = 0; i < count; i += 1) {
+  78  |             const addButton = productCards.nth(i).getByRole('button', { name: 'Add to cart' });
+  79  |             await expect(addButton).toBeVisible();
+  80  |             await expect(addButton).toBeEnabled();
+  81  |         }
+  82  |     });
+  83  | 
+  84  |     test('SORT-001 - Verify default product sorting by name in ascending alphabetical order (A to Z) | Expected: Name (A to Z) should be selected by default and names should be sorted alphabetically.', async ({ page }) => {
+  85  |         await expect(productListPage.sortDropdown).toHaveValue('az');
+  86  | 
+  87  |         const productNames = (await page.locator('[data-test="inventory-item"] a').allTextContents()).map((name) => name.trim());
+  88  |         const sortedNames = [...productNames].sort((a, b) => a.localeCompare(b));
+  89  | 
+  90  |         expect(productNames).toEqual(sortedNames);
+  91  |     });
+  92  | 
+  93  |     test('SORT-002 - Verify product sorting by name in descending alphabetical order (Z to A) | Expected: Selecting Name (Z to A) should reorder products from Z to A.', async ({ page }) => {
+  94  |         await productListPage.sortBy('za');
+  95  | 
+  96  |         const productNames = (await page.locator('[data-test="inventory-item"] a').allTextContents()).map((name) => name.trim());
+  97  |         const sortedNames = [...productNames].sort((a, b) => b.localeCompare(a));
+  98  | 
+> 99  |         expect(productNames).toEqual(sortedNames);
+      |                              ^ Error: expect(received).toEqual(expected) // deep equality
+  100 |     });
+  101 | 
+  102 |     test('SORT-003 - Verify product sorting by price in ascending order (Low to High) | Expected: Selecting Price (Low to High) should sort products by price from lowest to highest.', async ({ page }) => {
+  103 |         await productListPage.sortBy('lohi');
+  104 | 
+  105 |         const prices = (await page.locator('[data-test="inventory-item-price"]').allTextContents()).map((price) => Number.parseFloat(price.replace(/[^0-9.]/g, '')));
+  106 |         const ascendingPrices = [...prices].sort((a, b) => a - b);
+  107 | 
+  108 |         expect(prices).toEqual(ascendingPrices);
+  109 |     });
+  110 | 
+  111 |     test('SORT-004 - Verify product sorting by price in descending order (High to Low) | Expected: Selecting Price (High to Low) should sort products by price from highest to lowest.', async ({ page }) => {
+  112 |         await productListPage.sortBy('hilo');
+  113 | 
+  114 |         const prices = (await page.locator('[data-test="inventory-item-price"]').allTextContents()).map((price) => Number.parseFloat(price.replace(/[^0-9.]/g, '')));
+  115 |         const descendingPrices = [...prices].sort((a, b) => b - a);
+  116 | 
+  117 |         expect(prices).toEqual(descendingPrices);
+  118 |     });
+  119 | 
+  120 |     test('CART-001 - Verify a product can be added to the shopping cart | Expected: The selected product should be added successfully and the cart indicator should update.', async ({ page }) => {
+  121 |         const firstProduct = page.locator('[data-test="inventory-item"]').first();
+  122 |         const productName = (await firstProduct.locator('a').first().textContent())?.trim() ?? '';
+  123 | 
+  124 |         await firstProduct.getByRole('button', { name: 'Add to cart' }).click();
+  125 |         await expect(page.locator('[data-test="shopping-cart-badge"]')).toHaveText('1');
+  126 |         await expect(page.getByRole('link', { name: /cart/i })).toBeVisible();
+  127 |         expect(productName).not.toBe('');
+  128 |     });
+  129 | 
+  130 |     test('CART-002 - Verify shopping cart item count after adding a product | Expected: The cart item count should increment and reflect the added product.', async ({ page }) => {
+  131 |         const firstProduct = page.locator('[data-test="inventory-item"]').first();
+  132 | 
+  133 |         await firstProduct.getByRole('button', { name: 'Add to cart' }).click();
+  134 |         await expect(page.locator('[data-test="shopping-cart-badge"]')).toHaveText('1');
+  135 |     });
+  136 | 
+  137 |     test('CART-003 - Verify product details displayed in the shopping cart | Expected: The product name, description, and price should match the product list details.', async ({ page }) => {
+  138 |         const productCard = page.locator('[data-test="inventory-item"]').first();
+  139 |         const productName = (await productCard.locator('a').first().textContent())?.trim() ?? '';
+  140 |         const productDescription = (await productCard.locator('[data-test="inventory-item-desc"]').textContent())?.trim() ?? '';
+  141 |         const productPrice = (await productCard.locator('[data-test="inventory-item-price"]').textContent())?.trim() ?? '';
+  142 | 
+  143 |         await productCard.getByRole('button', { name: 'Add to cart' }).click();
+  144 |         await page.getByRole('link', { name: /cart/i }).click();
+  145 | 
+  146 |         await expect(page).toHaveURL(/\/cart$/);
+  147 |         await expect(page.getByText(productName)).toBeVisible();
+  148 |         await expect(page.getByText(productDescription)).toBeVisible();
+  149 |         await expect(page.getByText(productPrice)).toBeVisible();
+  150 |     });
+  151 | 
+  152 |     test('CART-004 - Verify product ordering in the shopping cart | Expected: Products in the cart should appear in the order defined by business rules and addition sequence.', async ({ page }) => {
+  153 |         const productCards = page.locator('[data-test="inventory-item"]');
+  154 |         const firstProductName = (await productCards.nth(0).locator('a').first().textContent())?.trim() ?? '';
+  155 |         const secondProductName = (await productCards.nth(1).locator('a').first().textContent())?.trim() ?? '';
+  156 | 
+  157 |         await productCards.nth(0).getByRole('button', { name: 'Add to cart' }).click();
+  158 |         await productCards.nth(1).getByRole('button', { name: 'Add to cart' }).click();
+  159 |         await page.getByRole('link', { name: /cart/i }).click();
+  160 | 
+  161 |         await expect(page.locator('.cart_item')).toHaveCount(2);
+  162 |         await expect(page.getByText(firstProductName)).toBeVisible();
+  163 |         await expect(page.getByText(secondProductName)).toBeVisible();
+  164 |     });
+  165 | });
+  166 | 
+  167 | 
+```

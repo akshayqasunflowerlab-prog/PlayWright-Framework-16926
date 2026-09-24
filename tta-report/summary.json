@@ -1,11 +1,11 @@
 {
-  "total": 3,
-  "passed": 3,
+  "total": 29,
+  "passed": 29,
   "failed": 0,
   "skipped": 0,
   "flaky": 0,
-  "durationMs": 7268,
+  "durationMs": 27420,
   "status": "passed",
-  "startedAt": "2026-09-17T21:21:03.009Z",
-  "finishedAt": "2026-09-17T21:21:10.277Z"
+  "startedAt": "2026-09-24T12:01:19.015Z",
+  "finishedAt": "2026-09-24T12:01:46.435Z"
 }
